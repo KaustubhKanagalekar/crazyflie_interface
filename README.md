@@ -20,27 +20,25 @@ After validating the CBF logic in simulation, we transitioned to a real Crazyfli
 
 This is the node flowchart that was implemented- 
 ![Node flowchart](./misc/node_flowchart.png)
-
 - Applied real-time safety corrections to keep the drone within a defined geofence.
 
-Here are some videos on RViz simulation that demonstrate the activation of the CBF safety filter for each individual axis (activates at y= 1.5 or z= 1.5). 
-[![CBF Y axis in RViz Sim](https://img.youtube.com/vi/DXnpY1qZTcU/0.jpg)](https://www.youtube.com/watch?v=DXnpY1qZTcU)
-[![CBF Z axis in RViz Sim](https://img.youtube.com/vi/fz4xGnWUHFU/0.jpg)](https://www.youtube.com/watch?v=fz4xGnWUHFU)
+ RViz Simulation (CBF Activation)
+- **Y-axis Activation** (activates at y = 1.5):  
+   [![CBF Y axis in RViz Sim](https://img.youtube.com/vi/DXnpY1qZTcU/0.jpg)](https://www.youtube.com/watch?v=DXnpY1qZTcU)  
+- **Z-axis Activation** (activates at z = 1.5):  
+   [![CBF Z axis in RViz Sim](https://img.youtube.com/vi/fz4xGnWUHFU/0.jpg)](https://www.youtube.com/watch?v=fz4xGnWUHFU)  
 
 - Successfully achieved precise geofencing along a single axis (y or z) within a 2.5m x 2.5m enclosure.
 
-Here are the videos of the physical hardware demonstration- 
-Y axis (no CBF)
-[![CBF Y axis no cbf](https://img.youtube.com/vi/iVN9Rzh9mUg/0.jpg)](https://www.youtube.com/watch?v=iVN9Rzh9mUg)
-
-Y axis (with CBF) 
-[![CBF Y axis no cbf](https://img.youtube.com/vi/-L9tF9XBN-c/0.jpg)](https://www.youtube.com/shorts/-L9tF9XBN-c)
-
-Z axis (no CBF) 
-[![CBF Y axis no cbf](https://img.youtube.com/vi/PCNi4mHTbLI/0.jpg)](https://www.youtube.com/watch?v=PCNi4mHTbLI)
-
-Z axis (with CBF) 
-{add video below} 
+ Physical Hardware Demonstration
+- **Y-axis (no CBF):**  
+   [![CBF Y axis no cbf](https://img.youtube.com/vi/iVN9Rzh9mUg/0.jpg)](https://www.youtube.com/watch?v=iVN9Rzh9mUg)  
+- **Y-axis (with CBF):**  
+   [![CBF Y axis with cbf](https://img.youtube.com/vi/-L9tF9XBN-c/0.jpg)](https://www.youtube.com/shorts/-L9tF9XBN-c)  
+- **Z-axis (no CBF):**  
+   [![CBF Z axis no cbf](https://img.youtube.com/vi/PCNi4mHTbLI/0.jpg)](https://www.youtube.com/watch?v=PCNi4mHTbLI)  
+- **Z-axis (with CBF):**  
+   *(Add video link here)*  
 
 
 ## Results
