@@ -1,4 +1,103 @@
-# Crazyflie Interface package
+# Overview
+**This project was undertaken by Kaustubh Kanagalekar, Alexander La, and Yeiry Melendez (all part of SAS Lab)**
+This project implements a geofencing barrier for a Crazyflie drone using Control Barrier Functions (CBFs) in Python and ROS2. The goal was to apply safety corrections to the drone's nominal control inputs to keep it within a defined boundary.
+
+## Implementation Details
+Simulation:
+The project began with a Python-based simulation where we experimented with heuristic values to understand the effects of a nominal controller and a CBF-based safety controller on a simplified drone model.
+
+The dynamics of the simple drone model can be described by the state vector \( x \) and the state derivatives \( \dot{x} \). The state vector is defined as:
+
+\[
+x = \begin{bmatrix}
+    y \\
+    z \\
+    \dot{y} \\
+    \dot{z}
+\end{bmatrix}
+\]
+
+where:  
+- \( y \) and \( z \) represent the position in the vertical and horizontal directions, respectively.  
+- \( \dot{y} \) and \( \dot{z} \) are the velocities in these directions.  
+
+*State Evolution*
+The system's state evolution is given by:
+
+\[
+\dot{x} = \begin{bmatrix}
+    \dot{y} \\
+    \dot{z} \\
+    \ddot{y} \\
+    \ddot{z}
+\end{bmatrix}
+= \begin{bmatrix}
+    x_3 \\
+    x_4 \\
+    g u_1 \\
+    u_2 - g
+\end{bmatrix}
+\]
+
+where:  
+- \( x_3 = \dot{y} \) and \( x_4 = \dot{z} \) are the velocities in the \( y \) and \( z \) directions.  
+- The control input \( u \) is defined as:
+
+\[
+u = \begin{bmatrix}
+    u_1 \\
+    u_2
+\end{bmatrix}
+\]
+
+where:  
+- \( u_1 = \phi \) = control input for the angle  
+- \( u_2 = T \) = thrust applied to the system  
+- \( g \) = gravitational acceleration  
+
+*Constraints*
+The constraint used for calculating the trajectories is defined by a circular boundary:
+
+\[
+\text{circle\_constraint} = 5 - \sqrt{y^2 + z^2}
+\]
+
+*Nominal Controller*
+The nominal controller is defined as:
+
+\[
+\begin{bmatrix}
+-1.0 \cdot (x_1 - 6.0) - 2.0 \cdot x_3 \\
+9.81 - 0.75 \cdot (x_2 - 6.0) - 1.5 \cdot x_4
+\end{bmatrix}
+\]
+
+where \( x_1 = y \) and \( x_2 = z \) are the positions in the y and z directions.  
+
+
+
+## Transition to Crazyflie:
+After validating the CBF logic in simulation, we transitioned to a real Crazyflie drone. We implemented the CBF logic in a ROS2 node, which:
+
+Integrated with a pre-existing LQR controller via the cf_interface to receive nominal control inputs. This LQR controller is different from the nominal controller defined above. 
+
+Applied real-time safety corrections to keep the drone within a defined geofence.
+
+Successfully achieved precise geofencing along a single axis (y or z) within a 2.5m x 2.5m enclosure.
+
+## Results
+Enabled real-time safety corrections using CBFs.
+
+Improved operational stability and safety within the defined geofence.
+
+Established a functional pipeline for future multi-axis geofencing
+
+
+### Acknowledgements 
+We would like to thank Sander Tonkens for his assistance throughout this project. In addition, we would like to thank SAS Lab for providing us with space and resources to conduct this project. 
+
+The original README for the Crazyflie Interface Package is below- 
+## Crazyflie Interface package
 This package provides a basic interface to use low-level control (roll, pitch, yaw rate, thrust) to interface with the crazyflie 2.1.
 It is meant as the base package upon which more elaborate controllers can be built.
 
@@ -23,7 +122,7 @@ The base functionality (`ros2 launch crazyflie_interface launch.py`) does the fo
         - Example call: `ros2 service call /cf_interface/command crazyflie_interface/srv/Command "{command: 'takeoff'}"`
     
 
-## Standard form
+### Standard form
 State message is as follows: [x, y, z, vx, vy, vz, q_x, q_y, q_z, q_w, wx, wy, wz]
 - Linear velocities are in world frame
 - Angular velocities are in body frame
@@ -33,7 +132,7 @@ Control message is as follows: [roll, pitch, yaw_rate, thrust]
 - Yaw rate is in radians per second
 - Thrust is in Newtons per kilogram (same as gravity)
 
-## Getting started
+### Getting started
 
 ### Dependencies
 - [UCSD SASLab's crazyswarm2 package](https://github.com/UCSD-SASLab/crazyswarm2).
@@ -46,7 +145,7 @@ Control message is as follows: [roll, pitch, yaw_rate, thrust]
 ### Running base functionality (sim)
 1. `ros2 launch crazyflie_interface base_controller_launch.py backend:=sim` for simulation backend.
 2. `ros2 service call /cf_interface/command crazyflie_interface/srv/Command "{command: 'takeoff'}"` to takeoff.
-3. It will start flying to random position targets.
+3. It will start flying to random position targets. (Note: with the new code, it will not travel to random targets, but rather to a single goal defined in the code) 
 3. `ros2 service call /cf_interface/command crazyflie_interface/srv/Command "{command: 'land'}"` to land.
 
 
@@ -54,7 +153,7 @@ Control message is as follows: [roll, pitch, yaw_rate, thrust]
 1. Identify drone URI (# under drone)
 2. `ros2 launch crazyflie_interface base_controller_launch.py backend:=cflib uri:=uri` for hardware backend.
 3. `ros2 service call /cf_interface/command crazyflie_interface/srv/Command "{command: 'takeoff'}"` to takeoff.
-4. It will start flying to random targets
+4. It will start flying to random targets (Note: with the new code, it will not travel to random targets, but rather to a single goal defined in the code)
 5. `ros2 service call /cf_interface/command crazyflie_interface/srv/Command "{command: 'land'}"` to land.
 
 ## TODOs
