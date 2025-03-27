@@ -1,5 +1,8 @@
-# Overview
+<script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
 **This project was undertaken by Kaustubh Kanagalekar, Alexander La, and Yeiry Melendez (all part of SAS Lab)**
+# Overview
 This project implements a geofencing barrier for a Crazyflie drone using Control Barrier Functions (CBFs) in Python and ROS2. The goal was to apply safety corrections to the drone's nominal control inputs to keep it within a defined boundary.
 
 ## Implementation Details
