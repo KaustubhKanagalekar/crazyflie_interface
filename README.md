@@ -10,6 +10,8 @@ The project began with a Python-based simulation where we experimented with heur
 ![Quadcopter dynamics](./misc/quadcopter_dynamics.png)
 
 
+The simulation results are shown below. Here, the simulation shows how for the y and z axes, the CBF "takes over" instead of the nominal controller and steers the system to the safety barrier in case the goal is outside the safe set. 
+
 ## Transition to Crazyflie:
 After validating the CBF logic in simulation, we transitioned to a real Crazyflie drone. We implemented the CBF logic in a ROS2 node, which:
 
