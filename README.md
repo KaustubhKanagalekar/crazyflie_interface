@@ -51,7 +51,7 @@ Established a functional pipeline for future multi-axis geofencing
 [Click here to view the presentation slides of this project](./misc/geofencing_slides.pdf)
 
 ## Additional Information 
-For more information on CBFs, please [click here](<URL1>) and [here](<URL2>). (This was done by Kaustubh Kanagalekar for MAE 248)
+For more information on CBFs, please [click here](./MAE248ProjectPresentation.pptx) and [here](./MAE_248_CBF_Report.pdf). (This was done by Kaustubh Kanagalekar for MAE 248)
 
 
 ### Acknowledgements 
