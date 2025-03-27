@@ -7,7 +7,7 @@ This project implements a geofencing barrier for a Crazyflie drone using Control
 Simulation:
 The project began with a Python-based simulation where we experimented with heuristic values to understand the effects of a nominal controller and a CBF-based safety controller on a simplified drone model.
 
-![Quadcopter dynamics](./misc/quadcopter_dynamics.png)
+![Quadcopter dynamics](./misc/quadcopter dynamics.png)
 
 
 ## Transition to Crazyflie:
