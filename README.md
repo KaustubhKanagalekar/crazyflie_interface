@@ -48,6 +48,7 @@ Improved operational stability and safety within the defined geofence.
 
 Established a functional pipeline for future multi-axis geofencing
 
+[Click here to view the presentation slides of this project](./misc/geofencing_slides.pdf)
 
 ### Acknowledgements 
 We would like to thank Sander Tonkens for his assistance throughout this project. In addition, we would like to thank SAS Lab for providing us with space and resources to conduct this project. 
