@@ -11,11 +11,15 @@ The project began with a Python-based simulation where we experimented with heur
 
 
 The simulation results are shown below. Here, the simulation shows how for the y and z axes, the CBF "takes over" instead of the nominal controller and steers the system to the safety barrier in case the goal is outside the safe set. 
+![Python Simulation Results](./misc/python_sim_results.png)
 
 ## Transition to Crazyflie:
 After validating the CBF logic in simulation, we transitioned to a real Crazyflie drone. We implemented the CBF logic in a ROS2 node, which:
 
 Integrated with a pre-existing LQR controller via the cf_interface to receive nominal control inputs. This LQR controller is different from the nominal controller defined above. 
+
+This is the node flowchart that was implemented- 
+![Node flowchart](./misc/node_flowchart.png)
 
 Applied real-time safety corrections to keep the drone within a defined geofence.
 
