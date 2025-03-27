@@ -34,7 +34,7 @@ Y axis (no CBF)
 [![CBF Y axis no cbf](https://img.youtube.com/vi/iVN9Rzh9mUg/0.jpg)](https://www.youtube.com/watch?v=iVN9Rzh9mUg)
 
 Y axis (with CBF) 
-[![CBF Y axis no cbf](https://img.youtube.com/vi/-L9tF9XBN-/0.jpg)](https://www.youtube.com/shorts/-L9tF9XBN-c)
+[![CBF Y axis no cbf](https://img.youtube.com/vi/-L9tF9XBN-c/0.jpg)](https://www.youtube.com/shorts/-L9tF9XBN-c)
 
 Z axis (no CBF) 
 [![CBF Y axis no cbf](https://img.youtube.com/vi/PCNi4mHTbLI/0.jpg)](https://www.youtube.com/watch?v=PCNi4mHTbLI)
