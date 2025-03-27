@@ -16,14 +16,18 @@ The simulation results are shown below. Here, the simulation shows how for the y
 ## Transition to Crazyflie:
 After validating the CBF logic in simulation, we transitioned to a real Crazyflie drone. We implemented the CBF logic in a ROS2 node, which:
 
-Integrated with a pre-existing LQR controller via the cf_interface to receive nominal control inputs. This LQR controller is different from the nominal controller defined above. 
+- Integrated with a pre-existing LQR controller via the cf_interface to receive nominal control inputs. This LQR controller is different from the nominal controller defined above. 
 
 This is the node flowchart that was implemented- 
 ![Node flowchart](./misc/node_flowchart.png)
 
-Applied real-time safety corrections to keep the drone within a defined geofence.
+- Applied real-time safety corrections to keep the drone within a defined geofence.
 
-Successfully achieved precise geofencing along a single axis (y or z) within a 2.5m x 2.5m enclosure.
+Here are some videos on RViz simulation that demonstrate the activation of the CBF safety filter for each individual axis (activates at y= 1.5 or z= 1.5). 
+[![CBF Y axis in RViz Sim](https://img.youtube.com/vi/DXnpY1qZTcU/0.jpg)](https://www.youtube.com/watch?v=DXnpY1qZTcU)
+[![CBF Z axis in RViz Sim](https://img.youtube.com/vi/fz4xGnWUHFU/0.jpg)](https://www.youtube.com/watch?v=fz4xGnWUHFU)
+
+- Successfully achieved precise geofencing along a single axis (y or z) within a 2.5m x 2.5m enclosure.
 
 ## Results
 Enabled real-time safety corrections using CBFs.
