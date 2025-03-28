@@ -38,7 +38,8 @@ This is the node flowchart that was implemented-
 - **Z-axis (no CBF):**  
    [![CBF Z axis no cbf](https://img.youtube.com/vi/PCNi4mHTbLI/0.jpg)](https://www.youtube.com/watch?v=PCNi4mHTbLI)  
 - **Z-axis (with CBF):**  
-   *(Add video link here)*  
+   [![CBF Z axis with cbf](https://img.youtube.com/vi/xhdcX3UmiiY/0.jpg)](https://www.youtube.com/watch?v=xhdcX3UmiiY)  
+  
 
 
 ## Results
